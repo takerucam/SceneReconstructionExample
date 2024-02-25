@@ -168,7 +168,8 @@ class EntityModel {
             )
         }
         let meshResource = try MeshResource.generate(from: [desc])
-        let material = SimpleMaterial(color: .blue.withAlphaComponent(0.7), isMetallic: false)
+        var material = SimpleMaterial(color: .blue, isMetallic: false)
+        material.triangleFillMode = .lines
         let modelEntity = ModelEntity(mesh: meshResource, materials: [material])
         return modelEntity
     }
